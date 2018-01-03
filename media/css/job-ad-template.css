@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+/* Adjust:
+	border colour, 
+	horizontal padding (#job-ad-header, #job-ad-content, #job-ad-footer), 
+	vertical margin (.job-ad-part), 
+	header and footer background images, 
+	copy styling for header and anchor tags, generic fonts and line heights.
+*/
+
+#job-ad-template *
+{
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	
+	font: inherit;
+	text-align: left;
+	outline: 0;
+}
+#job-ad-template
+{
+	overflow: hidden;
+	float: left;
+	width: 458px;
+	border: solid 1px #F2F2F2; /* border colour here */
+	
+	border-radius: 0;
+	/* generic font styling here */
+	font-size: 14px;
+	line-height: 1.5;
+	font-family: 'Lato', Arial, sans-serif;
+	color:#777977;
+    font-weight: 400;
+}
+#job-ad-template.job-ad-mickey
+{
+	width: 536px;
+}
+#job-ad-title img {
+    float: right;
+}
+#job-ad-template a
+{
+	text-decoration: underline;
+	color: #333;
+}
+#job-ad-template a:hover, 
+#job-ad-template a:focus, 
+#job-ad-template a:active
+{
+	text-decoration: none;
+	color: #333;
+}
+#job-ad-template p
+{
+	margin: 0 0 1.5em 0;
+}
+#job-ad-template ul
+{
+	padding: 0 0 0 18px;
+	margin: 0 0 1.5em 0;
+
+	list-style: disc;
+}
+#job-ad-template ol
+{
+	padding: 0 0 0 24px;
+	margin: 0 0 1.5em 0;
+}
+#job-ad-template ol li
+{
+	padding: 0;
+	margin: 0;
+}
+#job-ad-template ul li
+{
+	display: list-item;
+	padding: 0;
+	margin: 0;
+	
+	list-style: disc;
+}
+#job-ad-template li:before
+{
+	display: none;
+}
+#job-ad-template #job-ad-content
+{
+	padding: 1em 1.5em; /* horizontal padding  here*/
+}
+#job-ad-template .job-ad-part
+{
+	margin: 1.5em 0; /* vertical margin here */
+}
+#job-ad-template #job-ad-header
+{
+	overflow: hidden;
+	position: relative;
+	padding: 1.5em;
+
+	/*background: url("../images/.jpg") no-repeat 0 0;*/
+	background-size: cover;
+}
+#job-ad-template #job-ad-header:after
+{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 1;
+
+	background-color: #F2F2F2;
+}
+#job-dynamic-container {
+    padding-bottom: 45px;
+}
+#job-ad-template.has-logo-0 #job-advertiser-logo
+{
+	display: none;
+}
+#job-ad-template #job-advertiser-logo {
+    position: relative;
+    z-index: 10;
+    float: right;
+    width: 220px;
+    height: 66px;
+    background-repeat: no-repeat;
+    background-position: right 50%;
+    background-size: auto 100%;
+    background-image: url(../images/logo.svg) !important;
+}
+
+#job-ad-template #job-ad-title h1
+{
+	position: relative;
+	z-index: 10;
+
+	padding: 0;
+	border: 0;
+	margin:18px 0 0;
+	
+	/* copy and paste styles from h3 here */
+	font-size: 24px;
+	line-height: 1.2;
+	font-weight:400;
+	font-family: "lato", sans-serif;
+	color: #ff7803;
+}
+#job-ad-template .job-ad-option
+{
+	display: table-row;
+}
+#job-ad-template .job-ad-optional-heading, 
+#job-ad-template .job-ad-optional-text
+{
+	display: table-cell;
+	vertical-align: top;
+}
+#job-ad-template .job-ad-optional-heading
+{
+	padding: 0 1em 0 0;
+	font-weight: 700;
+}
+#job-ad-template .job-ad-optional-text div
+{
+	display: inline-block;
+}
+#job-ad-template #job-ad-footer a
+{
+	display: block;
+	padding: 0.5em 0;
+	
+	text-align: center;
+	text-decoration: none;
+	background: #ff7803;
+	color: #fff;
+}
+#job-ad-template #job-ad-footer a:hover, 
+#job-ad-template #job-ad-footer a:focus, 
+#job-ad-template #job-ad-footer a:active
+{
+	background: #072B5E;
+	color: #fff;
+}
+@media screen and (max-width:767px) {
+#job-ad-title img {
+    float: left;
+    margin-top: 14px;
+}
+}
+@media screen and (max-width: 599px) {
+	
+	#job-ad-template .job-ad-option
+	{
+		margin: 0.5em 0;
+	}
+	#job-ad-template .job-ad-option, 
+	#job-ad-template .job-ad-optional-heading, 
+	#job-ad-template .job-ad-optional-text, 
+	#job-ad-template .job-ad-optional-text div
+	{
+		display: block;
+	}
+
+}
+@media screen and (max-width: 479px) {
+
+	#job-ad-template #job-ad-header h2
+	{
+		margin-bottom: 0.5em;	
+	}
+	#job-ad-template #job-ad-header h2, 
+	#job-ad-template #job-advertiser-logo 
+	{
+		float: none;
+		width: auto;
+	}
+
+}
+
