@@ -98,6 +98,12 @@
         if ((document.URL.indexOf("/member/register.aspx") >= 0)) {
             $(".left-hidden").css("display", "block");
         }
+
+        if ( document.URL.indexOf('myjobalerts.aspx') != -1) { 
+            $(".inner-title h1").text("favorite searches / job alerts");
+        }
+
+
         // Contact - Google map
         $("#footer").prepend($("#contact-map"));
         // generate select navigation from sidebar Dynamic menu
