@@ -1,3 +1,5 @@
+// dummy comment
+
 !(function($) {
     // regular js
     /*  function formatDate(myDate) {
@@ -99,7 +101,7 @@
             $(".left-hidden").css("display", "block");
         }
 
-        if ( document.URL.indexOf('myjobalerts.aspx') != -1) { 
+        if (document.URL.indexOf('myjobalerts.aspx') != -1) {
             $(".inner-title h1").text("favorite searches / job alerts");
         }
 
@@ -199,70 +201,70 @@
 
         $("#myJobsList ul").each(function() {
             var dataURL = $(this).attr("data-url");
-        $(this).includeFeed({
-            baseSettings: {
-                rssURL: [dataURL || "/job/rss.aspx?search=1"],
-                limit: 200
-            },
-            predicates: {
-                // example predicate use
-                pubDate: function(pubDate) {
-                    var monthList = ["Jan", "Febr", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    var dateObj = '';
-                    var myDay, myMonth, myYear, mnth;
-                    dateObj = pubDate.trim().split('/');
-                    if (dateObj.length > 2) {
-                        mnth = monthList[parseInt(dateObj[0]) - 1];
-                        myDay = "<span class='rss-item-pubDate-date'>" + dateObj[1] + "</span> ";
-                        myMonth = "<span class='rss-item-pubDate-month'>" + mnth + "</span> ";
-                        myYear = "<span class='rss-item-pubDate-full-year'>" + dateObj[2].substr(0, 4) + "</span> ";
-                    } else {
-                        return pubDate.trim();
-                    }
-                    return myDay + myMonth;
-                }
-            },
-            elements: {
-                pubDate: formatDate,
-                title: 1,
-                description: 1
-            },
-            complete: function() {
-                if ($(this).children().length) {
-
-               
-                $(this).owlCarousel({
-                    loop: true,
-                    autoplay: true,
-                    nav: true,
-                    dots: false,
-                    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-                    responsive: {
-                        0: {
-                            items: 1,
-                            margin: 0
-                        },
-                        768: {
-                            items: 1,
-                            margin: 15
-                        },
-                        991: {
-                            items: 2,
+            $(this).includeFeed({
+                baseSettings: {
+                    rssURL: [dataURL || "/job/rss.aspx?search=1"],
+                    limit: 200
+                },
+                predicates: {
+                    // example predicate use
+                    pubDate: function(pubDate) {
+                        var monthList = ["Jan", "Febr", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                        var dateObj = '';
+                        var myDay, myMonth, myYear, mnth;
+                        dateObj = pubDate.trim().split('/');
+                        if (dateObj.length > 2) {
+                            mnth = monthList[parseInt(dateObj[0]) - 1];
+                            myDay = "<span class='rss-item-pubDate-date'>" + dateObj[1] + "</span> ";
+                            myMonth = "<span class='rss-item-pubDate-month'>" + mnth + "</span> ";
+                            myYear = "<span class='rss-item-pubDate-full-year'>" + dateObj[2].substr(0, 4) + "</span> ";
+                        } else {
+                            return pubDate.trim();
                         }
+                        return myDay + myMonth;
                     }
-                })
-            }
-            // else{
-            //     $('.section-jobfeed').hide();
-             
+                },
+                elements: {
+                    pubDate: formatDate,
+                    title: 1,
+                    description: 1
+                },
+                complete: function() {
+                    if ($(this).children().length) {
 
-            // }
-        }
+
+                        $(this).owlCarousel({
+                            loop: true,
+                            autoplay: true,
+                            nav: true,
+                            dots: false,
+                            navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+                            responsive: {
+                                0: {
+                                    items: 1,
+                                    margin: 0
+                                },
+                                768: {
+                                    items: 1,
+                                    margin: 15
+                                },
+                                991: {
+                                    items: 2,
+                                }
+                            }
+                        })
+                    }
+                    // else{
+                    //     $('.section-jobfeed').hide();
+
+
+                    // }
+                }
+            });
         });
-    });
 
 
-    
+
         //home testimonial
         $(".testimonial").each(function() {
             var dataURL = $(this).attr("data-url");
@@ -353,7 +355,7 @@
 
 
         //change resume creator link
-        $('.icongrid3 a').attr('href','/member/register.aspx');
+        $('.icongrid3 a').attr('href', '/member/register.aspx');
         //scroll
         $('form[action="/"] a[href*=#]:not([href=#])').click(function() {
             if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -704,55 +706,55 @@
             //team job
 
 
-            $(".team-joblist ul").each(function() {
-                var dataURL = $(this).attr("data-url");
-        $(this).includeFeed({
-            baseSettings: {
-                rssURL: [dataURL || "/job/rss.aspx?search=1"]
-            },
-            predicates: {
-                // example predicate use
-                pubDate: function(pubDate) {
-                    var monthList = ["Jan", "Febr", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-                    var dateObj = '';
-                    var myDay, myMonth, myYear, mnth;
-                    dateObj = pubDate.trim().split('/');
-                    if (dateObj.length > 2) {
-                        mnth = monthList[parseInt(dateObj[1]) - 1];
-                        myDay = "<span class='rss-item-pubDate-date'>" + dateObj[0] + "</span> ";
-                        myMonth = "<span class='rss-item-pubDate-month'>" + mnth + "</span> ";
-                        myYear = "<span class='rss-item-pubDate-full-year'>" + dateObj[2].substr(0, 4) + "</span> ";
-                    } else {
-                        return pubDate.trim();
+        $(".team-joblist ul").each(function() {
+            var dataURL = $(this).attr("data-url");
+            $(this).includeFeed({
+                baseSettings: {
+                    rssURL: [dataURL || "/job/rss.aspx?search=1"]
+                },
+                predicates: {
+                    // example predicate use
+                    pubDate: function(pubDate) {
+                        var monthList = ["Jan", "Febr", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                        var dateObj = '';
+                        var myDay, myMonth, myYear, mnth;
+                        dateObj = pubDate.trim().split('/');
+                        if (dateObj.length > 2) {
+                            mnth = monthList[parseInt(dateObj[1]) - 1];
+                            myDay = "<span class='rss-item-pubDate-date'>" + dateObj[0] + "</span> ";
+                            myMonth = "<span class='rss-item-pubDate-month'>" + mnth + "</span> ";
+                            myYear = "<span class='rss-item-pubDate-full-year'>" + dateObj[2].substr(0, 4) + "</span> ";
+                        } else {
+                            return pubDate.trim();
+                        }
+                        return myDay + myMonth;
                     }
-                    return myDay + myMonth;
+                },
+                elements: {
+                    pubDate: formatDate,
+                    title: 1,
+                    description: 1
+                },
+                complete: function() {
+                    /* if ($(this).children().length > 2) {
+                         $(this).simplyScroll({
+                             frameRate: 60
+                         });
+                     }*/
+                    $(this).bxSlider({
+                        infiniteLoop: true,
+                        slideMargin: 40,
+                        speed: 500,
+                        minSlides: 2,
+                        maxSlides: 2,
+                        mode: 'vertical',
+                        controls: true,
+                        nextText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
+                        prevText: '<i class="fa fa-angle-left" aria-hidden="true"></i>'
+                    });
                 }
-            },
-            elements: {
-                pubDate: formatDate,
-                title: 1,
-                description: 1
-            },
-            complete: function() {
-                /* if ($(this).children().length > 2) {
-                     $(this).simplyScroll({
-                         frameRate: 60
-                     });
-                 }*/
-                $(this).bxSlider({
-                    infiniteLoop: true,
-                    slideMargin: 40,
-                    speed: 500,
-                    minSlides: 2,
-                    maxSlides: 2,
-                    mode: 'vertical',
-                    controls: true,
-                    nextText: '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-                    prevText: '<i class="fa fa-angle-left" aria-hidden="true"></i>'
-                });
-            }
+            });
         });
-    });
         /*File upload buttons*/
         $("#item8_file_1").on('change', function() {
             document.getElementById("attached-resume").value = this.value;
@@ -762,44 +764,44 @@
         $('.inner-banner').attr("style", link);
 
 
-        $('#prefix_left-navigation-static ul li ul li:last-child a').attr("href","http://www.alliedeoffice.com/global/php/employee-login.php");
+        $('#prefix_left-navigation-static ul li ul li:last-child a').attr("href", "http://www.alliedeoffice.com/global/php/employee-login.php");
 
-          $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label7').text('Industry');
+        $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label7').text('Industry');
         $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label8').text('sub-industry');
         $('#ctl00_ContentPlaceHolder1_ddlClassification option[value="0"]').text('- All Industry');
         $('#ddlSubClassification option[value="0"]').text('- - Select a Sub Industry');
-//         //change text in register page
-         $('#ctl00_ContentPlaceHolder1_updatePanel1').change(function() {
-         $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label8').html('sub-industry');
-          $('#ddlSubClassification option:first').html('- - Select a Sub Industry');
-         $('#ddlSubClassification option[value="0"]').html('- - Select a Sub Industry');
-         $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label7').html('Industry');
-         $('#ctl00_ContentPlaceHolder1_ddlClassification option[value="0"]').html('- All Industry');
-        
-
-    });
+        //         //change text in register page
+        $('#ctl00_ContentPlaceHolder1_updatePanel1').change(function() {
+            $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label8').html('sub-industry');
+            $('#ddlSubClassification option:first').html('- - Select a Sub Industry');
+            $('#ddlSubClassification option[value="0"]').html('- - Select a Sub Industry');
+            $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label7').html('Industry');
+            $('#ctl00_ContentPlaceHolder1_ddlClassification option[value="0"]').html('- All Industry');
 
 
-         $('body').on('change', 'select#ctl00_ContentPlaceHolder1_ddlClassification', function(){
-           if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
-               setTimeout( function(){
-                   $('label[for*="ddlClassification"]').text('Industry');
-                          $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label8').text('sub-industry');
-        $('#ctl00_ContentPlaceHolder1_ddlClassification option[value="0"]').text('- All Industry');
-        $('#ddlSubClassification option[value="0"]').text('- - Select a Sub Industry');
-
-               },199);
-           }
-
-       });
+        });
 
 
-// $("select #ctl00_ContentPlaceHolder1_ddlClassification").change(function() {
-//       $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label7').text('Industry');
-//         $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label8').text('sub-industry');
-//         $('#ctl00_ContentPlaceHolder1_ddlClassification option[value="0"]').text('- All Industry');
-//         $('#ddlSubClassification option[value="0"]').text('- - Select a Sub Industry');
-//     });
+        $('body').on('change', 'select#ctl00_ContentPlaceHolder1_ddlClassification', function() {
+            if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                setTimeout(function() {
+                    $('label[for*="ddlClassification"]').text('Industry');
+                    $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label8').text('sub-industry');
+                    $('#ctl00_ContentPlaceHolder1_ddlClassification option[value="0"]').text('- All Industry');
+                    $('#ddlSubClassification option[value="0"]').text('- - Select a Sub Industry');
+
+                }, 199);
+            }
+
+        });
+
+
+        // $("select #ctl00_ContentPlaceHolder1_ddlClassification").change(function() {
+        //       $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label7').text('Industry');
+        //         $('#ctl00_ContentPlaceHolder1_pnlFullRegistration #Label8').text('sub-industry');
+        //         $('#ctl00_ContentPlaceHolder1_ddlClassification option[value="0"]').text('- All Industry');
+        //         $('#ddlSubClassification option[value="0"]').text('- - Select a Sub Industry');
+        //     });
 
 
 
@@ -814,7 +816,7 @@
         //     $('#ctl00_ContentPlaceHolder1_ddlClassification option[value="0"]').val('- All Industry');
         //     $('#ddlSubClassification option[value="0"]').val('- - Select a Sub Industry');
         // 
-      
+
         $(".member-status-register").text('Subscribe');
 
         //news page full width
@@ -911,7 +913,7 @@
         $(".consultant-link a").each(function(ind, elem) {
             var str = $(elem).text();
             if (str.trim() != "") {
-                $(elem).attr("href","//"+window.location.host + "/t/" + str.trim().toLowerCase().split(" ").join("-"));
+                $(elem).attr("href", "//" + window.location.host + "/t/" + str.trim().toLowerCase().split(" ").join("-"));
             }
         });
     })
@@ -945,7 +947,7 @@ function setCountOfItems(activeList, activeListChild, loadMore, parent, num) {
     }, 500);
 }
 
-function CustomFunction(){
+function CustomFunction() {
 
 
 }
